@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>iview 使用笔记 | SoySauce1024</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿 过程中，记录一些自认为应该记录的东西，防止以后忘记..">
+  <meta name="description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿过程中，记录一些自认为应该记录的东西，防止以后忘记..">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iview 使用笔记">
 <meta property="og:url" content="http://yoursite.com/2018/04/09/iview-使用笔记/index.html">
 <meta property="og:site_name" content="SoySauce1024">
-<meta property="og:description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿 过程中，记录一些自认为应该记录的东西，防止以后忘记..">
+<meta property="og:description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿过程中，记录一些自认为应该记录的东西，防止以后忘记..">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-09T16:13:05.000Z">
+<meta property="og:updated_time" content="2018-04-09T16:15:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iview 使用笔记">
-<meta name="twitter:description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿 过程中，记录一些自认为应该记录的东西，防止以后忘记..">
+<meta name="twitter:description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿过程中，记录一些自认为应该记录的东西，防止以后忘记..">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -175,8 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿</p>
-<p>过程中，记录一些自认为应该记录的东西，防止以后忘记..</p>
+        <p>渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿<br>过程中，记录一些自认为应该记录的东西，防止以后忘记..</p>
 <a id="more"></a>
 <h1 id="Table-组件"><a href="#Table-组件" class="headerlink" title="Table 组件"></a>Table 组件</h1><hr>
 <h2 id="1、自定义列的事件绑定"><a href="#1、自定义列的事件绑定" class="headerlink" title="1、自定义列的事件绑定"></a>1、自定义列的事件绑定</h2><pre><code>需求：一个数据表，表的最后一列是单选项。
@@ -191,20 +190,20 @@
            return h(&apos;Checkbox&apos;, {
                   props: {
                       //这里写属性 
-                      size:&apos;small&apos;
+                          size:&apos;small&apos;
                   },
                   style:{
                       // 这里写样式 驼峰命名 如:
-                      marginRight:&apos;5px&apos;
+                          marginRight:&apos;5px&apos;
                   },
                   on: {
                           //这里写事件响应 注意 如果是 原生的属性，比如 click 这些 不需要加引号，
                           click:()=&gt;{ 
                              }
                        //如果是 iview 的组建的属性，则需要加 引号，这里还是费了不少时间找！！
-                      &apos;on-change&apos;: (hasChecked) =&gt; {
-                               console.log(&apos;hehe&apos;,hasChecked);
-                       }
+                          &apos;on-change&apos;: (hasChecked) =&gt; {
+                                   console.log(&apos;hehe&apos;,hasChecked);
+                        }
                   }
           })
  }
