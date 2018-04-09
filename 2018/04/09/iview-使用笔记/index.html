@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CH1-Activity生命周期和启动模式.md | SoySauce1024</title>
+  <title>iview 使用笔记 | SoySauce1024</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
-<meta name="keywords" content="android">
+  <meta name="description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿 过程中，记录一些自认为应该记录的东西，防止以后忘记..">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CH1-Activity生命周期和启动模式.md">
-<meta property="og:url" content="http://yoursite.com/2018/04/09/CH1-Activity生命周期和启动模式/index.html">
+<meta property="og:title" content="iview 使用笔记">
+<meta property="og:url" content="http://yoursite.com/2018/04/09/iview-使用笔记/index.html">
 <meta property="og:site_name" content="SoySauce1024">
-<meta property="og:description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
+<meta property="og:description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿 过程中，记录一些自认为应该记录的东西，防止以后忘记..">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-09T07:29:47.000Z">
+<meta property="og:updated_time" content="2018-04-09T16:13:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CH1-Activity生命周期和启动模式.md">
-<meta name="twitter:description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
+<meta name="twitter:title" content="iview 使用笔记">
+<meta name="twitter:description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿 过程中，记录一些自认为应该记录的东西，防止以后忘记..">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -155,32 +155,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CH1-Activity生命周期和启动模式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iview-使用笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CH1-Activity生命周期和启动模式.md
+      iview 使用笔记
     </h1>
   
 
         
-        <a href="/2018/04/09/CH1-Activity生命周期和启动模式/" class="archive-article-date">
-  	<time datetime="2018-04-09T07:19:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+        <a href="/2018/04/09/iview-使用笔记/" class="archive-article-date">
+  	<time datetime="2018-04-09T15:57:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.
-</code></pre><a id="more"></a>
-<h1 id="一、-Activity-生命周期"><a href="#一、-Activity-生命周期" class="headerlink" title="一、 Activity 生命周期"></a>一、 Activity 生命周期</h1><hr>
-<h2 id="1-何谓生命周期-？"><a href="#1-何谓生命周期-？" class="headerlink" title="1. 何谓生命周期 ？"></a>1. 何谓生命周期 ？</h2><h2 id="2-正常情况下生命周期"><a href="#2-正常情况下生命周期" class="headerlink" title="2. 正常情况下生命周期"></a>2. 正常情况下生命周期</h2><h2 id="3-异常情况下生命周期"><a href="#3-异常情况下生命周期" class="headerlink" title="3. 异常情况下生命周期"></a>3. 异常情况下生命周期</h2><hr>
-<h1 id="二、-Activity-启动模式"><a href="#二、-Activity-启动模式" class="headerlink" title="二、 Activity 启动模式"></a>二、 Activity 启动模式</h1><hr>
-<h2 id="1-四大启动模式"><a href="#1-四大启动模式" class="headerlink" title="1. 四大启动模式"></a>1. 四大启动模式</h2><h2 id="2-立个-Acitivty-的-Flags"><a href="#2-立个-Acitivty-的-Flags" class="headerlink" title="2. 立个 Acitivty 的 Flags"></a>2. 立个 Acitivty 的 Flags</h2><h3 id="a-何为-falgs-？"><a href="#a-何为-falgs-？" class="headerlink" title="a. 何为 falgs ？"></a>a. 何为 falgs ？</h3><h3 id="b-flag-有啥用-？"><a href="#b-flag-有啥用-？" class="headerlink" title="b. flag 有啥用 ？"></a>b. flag 有啥用 ？</h3><h3 id="c-有哪些-flag-？"><a href="#c-有哪些-flag-？" class="headerlink" title="c. 有哪些 flag ？"></a>c. 有哪些 flag ？</h3><h1 id="三、-IntentFilter-匹配机制"><a href="#三、-IntentFilter-匹配机制" class="headerlink" title="三、 IntentFilter 匹配机制"></a>三、 IntentFilter 匹配机制</h1>
+        <p>渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就….嘿嘿嘿</p>
+<p>过程中，记录一些自认为应该记录的东西，防止以后忘记..</p>
+<a id="more"></a>
+<h1 id="Table-组件"><a href="#Table-组件" class="headerlink" title="Table 组件"></a>Table 组件</h1><hr>
+<h2 id="1、自定义列的事件绑定"><a href="#1、自定义列的事件绑定" class="headerlink" title="1、自定义列的事件绑定"></a>1、自定义列的事件绑定</h2><pre><code>需求：一个数据表，表的最后一列是单选项。
+
+解决方案：使用 iview 的 table 组件提供了一自定义操作，即使用 render 函数来渲染最后一列的自定义样式。
+按着官方文档可以解决大部分问题，但是还是有些地方需要记录一下，不然用一次得查很久...
+</code></pre><p>####这里先放一波代码：</p>
+<pre><code>{
+  title: &apos;选择&apos;,
+  align: &apos;center&apos;,
+  render: (h, params) =&gt; {
+           return h(&apos;Checkbox&apos;, {
+                  props: {
+                      //这里写属性 
+                      size:&apos;small&apos;
+                  },
+                  style:{
+                      // 这里写样式 驼峰命名 如:
+                      marginRight:&apos;5px&apos;
+                  },
+                  on: {
+                          //这里写事件响应 注意 如果是 原生的属性，比如 click 这些 不需要加引号，
+                          click:()=&gt;{ 
+                             }
+                       //如果是 iview 的组建的属性，则需要加 引号，这里还是费了不少时间找！！
+                      &apos;on-change&apos;: (hasChecked) =&gt; {
+                               console.log(&apos;hehe&apos;,hasChecked);
+                       }
+                  }
+          })
+ }
+   }
+</code></pre>
       
 
       
@@ -214,7 +243,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -270,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/09/CH1-Activity生命周期和启动模式/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/09/iview-使用笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +313,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/09/iview-使用笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          iview 使用笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/10/Dialog笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Dialog</div>
+    <a href="/2018/04/09/CH1-Activity生命周期和启动模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CH1-Activity生命周期和启动模式.md</div>
       <i class="icon-circle-right"></i>
     </a>
   
