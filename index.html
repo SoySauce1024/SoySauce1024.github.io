@@ -311,6 +311,147 @@
 
 
   
+    <article id="post-Dialog笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/10/Dialog笔记/">Dialog</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/10/Dialog笔记/" class="archive-article-date">
+  	<time datetime="2017-10-10T02:03:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##Dialog 笔记</p>
+<p>###Style<br>很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。</p>
+<pre><code>&lt;style name=&quot;dialog&quot; parent=&quot;@android:style/Theme.Dialog&quot;&gt;
+    &lt;item name=&quot;android:windowFrame&quot;&gt;@null&lt;/item&gt;
+    &lt;!--边框--&gt;
+    &lt;item name=&quot;android:windowIsFloating&quot;&gt;true&lt;/item&gt;
+    &lt;!--是否浮现在activity之上--&gt;
+    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;false&lt;/item&gt;
+    &lt;!--半透明--&gt;
+    &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;
+    &lt;!--无标题--&gt;
+    &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/transparent&lt;/item&gt;
+    &lt;!--背景透明--&gt;
+    &lt;item name=&quot;android:backgroundDimEnabled&quot;&gt;true&lt;/item&gt;
+    &lt;!--模糊--&gt;
+&lt;/style&gt;
+</code></pre><p>反正这个 style 里面可以搞很多事情，而且，什么圆角 dialog ，只要在 style 里面让背景透明，然后给个圆角 shape ，就可以嘿嘿了。</p>
+<p>给 dialog 设置 style 也很简单：</p>
+<pre><code>在 new 的时候：         
+Dialog    mDialog=new Dialog(context,R.style.dialog);
+
+ps:本来以为会有一个方法，提供设置 style ，结果没有。。。
+</code></pre><h2 id="Dialog-展示位置"><a href="#Dialog-展示位置" class="headerlink" title="Dialog 展示位置"></a>Dialog 展示位置</h2><p>嗯，Dialog 一般默认是剧中展示的，当然也可以设置底部或者顶部什么的，dialog 的位置，是通过设置 dialog 当前依附的 window 参数：</p>
+<pre><code>Window window = loadingDialog.getWindow();
+WindowManager.LayoutParams lp = window.getAttributes();
+//下面这两个参数，设置 window 高宽，默认不用管，改了会影响位置设置
+lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+window.setGravity(Gravity.CENTER);//这里设置 dialog 位置
+window.setAttributes(lp);
+</code></pre><p>##简单的一个 LoadingDialog<br>    /**</p>
+<pre><code> * Created by zhouqiang on 2017/9/20.
+ */
+public class ProgessDialogView  {
+    private static Dialog loadingDialog;
+    public  static void showDialog(Activity context,String msg) {
+        //初始化 Dialog
+        LayoutInflater inflater = LayoutInflater.from(context);
+        FrameLayout view = ((FrameLayout) inflater.inflate(R.layout.dialog_loading_layout, null));
+        LinearLayout loadingLayout = (LinearLayout) view.findViewById(R.id.loading_layout);
+        TextView loadingMsg = (TextView) view.findViewById(R.id.loading_msg);
+        loadingMsg.setText(msg);
+        loadingDialog = new Dialog(context, R.style.MyLoadingStyle);
+        loadingDialog.setCancelable(true);
+      loadingDialog.setCanceledOnTouchOutside(false);
+        loadingDialog.setContentView(view, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+
+        Window window = loadingDialog.getWindow();
+        WindowManager.LayoutParams lp = window.getAttributes();
+//        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+//        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setGravity(Gravity.CENTER);
+        window.setAttributes(lp);
+//        window.setWindowAnimations(R.style.PopWindowAnimStyle);
+//        //
+        loadingDialog.show();
+//        return loadingDialog;
+    }
+
+    public static void closeDialog() {
+        if (loadingDialog != null &amp;&amp; loadingDialog.isShowing()) {
+           loadingDialog.dismiss();
+            loadingDialog=null;
+        }
+    }
+
+
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/10/Dialog笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -405,6 +546,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
             
             <div class="clearfix"></div>
