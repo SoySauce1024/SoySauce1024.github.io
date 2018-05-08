@@ -155,6 +155,177 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-微信小程序笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/18/微信小程序笔记/">微信小程序笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/18/微信小程序笔记/" class="archive-article-date">
+  	<time datetime="2018-04-18T09:01:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>简单记录一些「微信小程序」常用但是记不住的功能点
+</code></pre><h3 id="文本只能一行超出时显示省略号"><a href="#文本只能一行超出时显示省略号" class="headerlink" title="文本只能一行超出时显示省略号"></a>文本只能一行超出时显示省略号</h3><pre><code>css 样式如下:
+    text {
+            font-size: 28rpx;
+            width: 180rpx;    //宽度最好加上
+            color: #7f7f7f;
+            margin-top: 20rpx;
+            overflow: hidden ;//超出一行自动隐藏
+            text-overflow: ellipsis;//文字隐藏后添加省略号
+            white-space: nowrap ;//强制不换行
+        }
+</code></pre><h3 id="文本限制行数，超出行数显示省略号"><a href="#文本限制行数，超出行数显示省略号" class="headerlink" title="文本限制行数，超出行数显示省略号"></a>文本限制行数，超出行数显示省略号</h3><pre><code>css 样式如下：
+    .itemDesc {
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /*限制在一个块元素显示的文本的行数*/
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</code></pre><h3 id="页面默认-100-撑满高度"><a href="#页面默认-100-撑满高度" class="headerlink" title="页面默认 100% 撑满高度"></a>页面默认 100% 撑满高度</h3><pre><code>在 对应 page 的 wxss 中,或则全局的 wxss 即 app.wxss :
+    page {
+        min-height: 100% ;
+    }
+</code></pre><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1524802130219&amp;di=98e5e9f06aae9737581513feb7b19ca9&amp;imgtype=0&amp;src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D53213dc0bcfd5266b3263457c371fd5e%2Fd1160924ab18972b06ed31e1eccd7b899f510ac1.jpg" alt="图片"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/18/微信小程序笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-sqlite-操作相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/12/sqlite-操作相关/">sqlite 操作相关</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/12/sqlite-操作相关/" class="archive-article-date">
+  	<time datetime="2018-04-12T01:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####导出 csv 文件<br>    命令：<br>        sqlite3 xxx.db         //对数据sqlite文件进行读取<br>        .header on             // 表示导出表头，可选<br>        .mode csv                // 指定启用 csv 模式<br>        .once output.csv        // 指定输出 csv 文件的位置<br>        select * from tableName        // 导出数据由 sql 查询结果决定</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/12/sqlite-操作相关/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-iview-使用笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -485,6 +656,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Dialog | SoySauce1024</title>
+  <title>Tag: 小程序 | SoySauce1024</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录一发 Dialog 一些东西... Style很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。">
-<meta name="keywords" content="android">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Dialog">
-<meta property="og:url" content="http://yoursite.com/2017/10/10/Dialog笔记/index.html">
+  <meta name="description" content="听说搭建了博客就会写...我就想试试">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SoySauce1024">
+<meta property="og:url" content="http://yoursite.com/tags/小程序/index.html">
 <meta property="og:site_name" content="SoySauce1024">
-<meta property="og:description" content="记录一发 Dialog 一些东西... Style很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。">
+<meta property="og:description" content="听说搭建了博客就会写...我就想试试">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-09T07:15:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dialog">
-<meta name="twitter:description" content="记录一发 Dialog 一些东西... Style很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。">
+<meta name="twitter:title" content="SoySauce1024">
+<meta name="twitter:description" content="听说搭建了博客就会写...我就想试试">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -155,238 +153,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Dialog笔记" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Dialog
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/04/18/微信小程序笔记/" class="archive-article-date">
+  	<time datetime="2018-04-18T09:01:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/04/18/微信小程序笔记/">微信小程序笔记</a>
     </h1>
   
 
-        
-        <a href="/2017/10/10/Dialog笔记/" class="archive-article-date">
-  	<time datetime="2017-10-10T02:03:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>记录一发 Dialog 一些东西...
-</code></pre><h3 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h3><p>很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。<br><a id="more"></a></p>
-<pre><code>&lt;style name=&quot;dialog&quot; parent=&quot;@android:style/Theme.Dialog&quot;&gt;
-    &lt;item name=&quot;android:windowFrame&quot;&gt;@null&lt;/item&gt;
-    &lt;!--边框--&gt;
-    &lt;item name=&quot;android:windowIsFloating&quot;&gt;true&lt;/item&gt;
-    &lt;!--是否浮现在activity之上--&gt;
-    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;false&lt;/item&gt;
-    &lt;!--半透明--&gt;
-    &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;
-    &lt;!--无标题--&gt;
-    &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/transparent&lt;/item&gt;
-    &lt;!--背景透明--&gt;
-    &lt;item name=&quot;android:backgroundDimEnabled&quot;&gt;true&lt;/item&gt;
-    &lt;!--模糊--&gt;
-&lt;/style&gt;
-</code></pre><p>反正这个 style 里面可以搞很多事情，而且，什么圆角 dialog ，只要在 style 里面让背景透明，然后给个圆角 shape ，就可以嘿嘿了。</p>
-<p>给 dialog 设置 style 也很简单：</p>
-<pre><code>在 new 的时候：         
-Dialog    mDialog=new Dialog(context,R.style.dialog);
-
-ps:本来以为会有一个方法，提供设置 style ，结果没有。。。
-</code></pre><h2 id="Dialog-展示位置"><a href="#Dialog-展示位置" class="headerlink" title="Dialog 展示位置"></a>Dialog 展示位置</h2><p>嗯，Dialog 一般默认是剧中展示的，当然也可以设置底部或者顶部什么的，dialog 的位置，是通过设置 dialog 当前依附的 window 参数：</p>
-<pre><code>Window window = loadingDialog.getWindow();
-WindowManager.LayoutParams lp = window.getAttributes();
-//下面这两个参数，设置 window 高宽，默认不用管，改了会影响位置设置
-lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-window.setGravity(Gravity.CENTER);//这里设置 dialog 位置
-window.setAttributes(lp);
-</code></pre><p>##简单的一个 LoadingDialog<br>    /**</p>
-<pre><code> * Created by zhouqiang on 2017/9/20.
- */
-public class ProgessDialogView  {
-    private static Dialog loadingDialog;
-    public  static void showDialog(Activity context,String msg) {
-        //初始化 Dialog
-        LayoutInflater inflater = LayoutInflater.from(context);
-        FrameLayout view = ((FrameLayout) inflater.inflate(R.layout.dialog_loading_layout, null));
-        LinearLayout loadingLayout = (LinearLayout) view.findViewById(R.id.loading_layout);
-        TextView loadingMsg = (TextView) view.findViewById(R.id.loading_msg);
-        loadingMsg.setText(msg);
-        loadingDialog = new Dialog(context, R.style.MyLoadingStyle);
-        loadingDialog.setCancelable(true);
-      loadingDialog.setCanceledOnTouchOutside(false);
-        loadingDialog.setContentView(view, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-
-        Window window = loadingDialog.getWindow();
-        WindowManager.LayoutParams lp = window.getAttributes();
-//        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
-//        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        window.setGravity(Gravity.CENTER);
-        window.setAttributes(lp);
-//        window.setWindowAnimations(R.style.PopWindowAnimStyle);
-//        //
-        loadingDialog.show();
-//        return loadingDialog;
-    }
-
-    public static void closeDialog() {
-        if (loadingDialog != null &amp;&amp; loadingDialog.isShowing()) {
-           loadingDialog.dismiss();
-            loadingDialog=null;
-        }
-    }
-
-
-}
-</code></pre>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/10/10/Dialog笔记/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/04/09/CH1-Activity生命周期和启动模式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CH1-Activity生命周期和启动模式.md
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -409,9 +229,9 @@ public class ProgessDialogView  {
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

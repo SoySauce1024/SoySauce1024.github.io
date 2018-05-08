@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="SoySauce1024">
 <meta property="og:description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就....嘿嘿嘿 过程中，记录一些自认为应该记录的东西，防止以后忘记..">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-09T16:17:26.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/04/public/assets/page-size-opts.png">
+<meta property="og:updated_time" content="2018-05-08T01:18:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iview 使用笔记">
 <meta name="twitter:description" content="渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就....嘿嘿嘿 过程中，记录一些自认为应该记录的东西，防止以后忘记..">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/public/assets/page-size-opts.png">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -178,12 +180,11 @@
         <pre><code>渣渣前端技术，因为需要写一个后台管理，然后发现 iview 这个「套餐」很美滋滋，然后就....嘿嘿嘿
 过程中，记录一些自认为应该记录的东西，防止以后忘记..
 </code></pre><a id="more"></a>
-<h1 id="Table-组件"><a href="#Table-组件" class="headerlink" title="Table 组件"></a>Table 组件</h1><h2 id="1、自定义列的事件绑定"><a href="#1、自定义列的事件绑定" class="headerlink" title="1、自定义列的事件绑定"></a>1、自定义列的事件绑定</h2><pre><code>需求：一个数据表，表的最后一列是单选项。
+<h2 id="切记-Vue-本地运行不要开-「全局代理」，不然找不到-localhost-！"><a href="#切记-Vue-本地运行不要开-「全局代理」，不然找不到-localhost-！" class="headerlink" title="切记 Vue 本地运行不要开 「全局代理」，不然找不到 localhost ！"></a>切记 Vue 本地运行不要开 「全局代理」，不然找不到 localhost ！</h2><h2 id="切记-Vue-的双向绑定，数据源一定要有差异，不然不会触发绑定的！"><a href="#切记-Vue-的双向绑定，数据源一定要有差异，不然不会触发绑定的！" class="headerlink" title="切记 Vue 的双向绑定，数据源一定要有差异，不然不会触发绑定的！"></a>切记 Vue 的双向绑定，数据源一定要有差异，不然不会触发绑定的！</h2><h1 id="Table-组件"><a href="#Table-组件" class="headerlink" title="Table 组件"></a>Table 组件</h1><h2 id="1、自定义列的事件绑定"><a href="#1、自定义列的事件绑定" class="headerlink" title="1、自定义列的事件绑定"></a>1、自定义列的事件绑定</h2><pre><code>需求：一个数据表，表的最后一列是单选项。
 
 解决方案：使用 iview 的 table 组件提供了一自定义操作，即使用 render 函数来渲染最后一列的自定义样式。
 按着官方文档可以解决大部分问题，但是还是有些地方需要记录一下，不然用一次得查很久...
-</code></pre><p>####这里先放一波代码：</p>
-<pre><code>{
+</code></pre><h4 id="这里先放一波代码："><a href="#这里先放一波代码：" class="headerlink" title="这里先放一波代码："></a>这里先放一波代码：</h4><pre><code>{
   title: &apos;选择&apos;,
   align: &apos;center&apos;,
   render: (h, params) =&gt; {
@@ -208,6 +209,16 @@
           })
  }
    }
+</code></pre><h2 id="2、iview-中的组件的事件回调方法的使用"><a href="#2、iview-中的组件的事件回调方法的使用" class="headerlink" title="2、iview 中的组件的事件回调方法的使用"></a>2、iview 中的组件的事件回调方法的使用</h2><pre><code>都是以 @event-name=&apos;callback&apos; 这样的格式，比如以 Select 这个组件为例：
+     &lt;Select v-model=&quot;choseMachine&quot; class=&quot;machineSelect&quot; size=&quot;small&quot; placeholder=&quot;机器选择&quot;
+                @on-change=&quot;onSelectChange&quot;&gt;
+            &lt;Option v-for=&quot;item in machineDatas&quot; :value=&quot;item.value&quot; :key=&quot;item.value&quot;&gt;
+                {{ item.value}}
+            &lt;/Option&gt;
+       &lt;/Select&gt;
+</code></pre><h1 id="Page-组件"><a href="#Page-组件" class="headerlink" title="Page 组件"></a>Page 组件</h1><h2 id="1-page-size-opts"><a href="#1-page-size-opts" class="headerlink" title="1.page-size-opts"></a>1.page-size-opts</h2><pre><code>自定义每页条数切换的配置时，如果不设置 page-size 的初始值就，选择框的宽度会有问题。
+</code></pre><p><img src="../../public/assets/page-size-opts.png" alt="page"></p>
+<pre><code>所有如果使用了 page-size-opts 一定要配合 page-size 一起使用，给其一个默认值，使得宽度完美撑开。
 </code></pre>
       
 
@@ -311,6 +322,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/04/12/sqlite-操作相关/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          sqlite 操作相关
+        
+      </div>
+    </a>
   
   
     <a href="/2018/04/09/CH1-Activity生命周期和启动模式/" id="article-nav-older" class="article-nav-link-wrap">
@@ -445,6 +465,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
             
             <div class="clearfix"></div>

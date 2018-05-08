@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Dialog | SoySauce1024</title>
+  <title>sqlite 操作相关 | SoySauce1024</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录一发 Dialog 一些东西... Style很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。">
+  <meta name="description" content="####导出 csv 文件    命令：        sqlite3 xxx.db         //对数据sqlite文件进行读取        .header on             // 表示导出表头，可选        .mode csv                // 指定启用 csv 模式        .once output.csv        // 指定输出 cs">
 <meta name="keywords" content="android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dialog">
-<meta property="og:url" content="http://yoursite.com/2017/10/10/Dialog笔记/index.html">
+<meta property="og:title" content="sqlite 操作相关">
+<meta property="og:url" content="http://yoursite.com/2018/04/12/sqlite-操作相关/index.html">
 <meta property="og:site_name" content="SoySauce1024">
-<meta property="og:description" content="记录一发 Dialog 一些东西... Style很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。">
+<meta property="og:description" content="####导出 csv 文件    命令：        sqlite3 xxx.db         //对数据sqlite文件进行读取        .header on             // 表示导出表头，可选        .mode csv                // 指定启用 csv 模式        .once output.csv        // 指定输出 cs">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-09T07:15:16.000Z">
+<meta property="og:updated_time" content="2018-04-12T01:57:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dialog">
-<meta name="twitter:description" content="记录一发 Dialog 一些东西... Style很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。">
+<meta name="twitter:title" content="sqlite 操作相关">
+<meta name="twitter:description" content="####导出 csv 文件    命令：        sqlite3 xxx.db         //对数据sqlite文件进行读取        .header on             // 表示导出表头，可选        .mode csv                // 指定启用 csv 模式        .once output.csv        // 指定输出 cs">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -155,95 +155,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Dialog笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-sqlite-操作相关" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Dialog
+      sqlite 操作相关
     </h1>
   
 
         
-        <a href="/2017/10/10/Dialog笔记/" class="archive-article-date">
-  	<time datetime="2017-10-10T02:03:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
+        <a href="/2018/04/12/sqlite-操作相关/" class="archive-article-date">
+  	<time datetime="2018-04-12T01:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>记录一发 Dialog 一些东西...
-</code></pre><h3 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h3><p>很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。<br><a id="more"></a></p>
-<pre><code>&lt;style name=&quot;dialog&quot; parent=&quot;@android:style/Theme.Dialog&quot;&gt;
-    &lt;item name=&quot;android:windowFrame&quot;&gt;@null&lt;/item&gt;
-    &lt;!--边框--&gt;
-    &lt;item name=&quot;android:windowIsFloating&quot;&gt;true&lt;/item&gt;
-    &lt;!--是否浮现在activity之上--&gt;
-    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;false&lt;/item&gt;
-    &lt;!--半透明--&gt;
-    &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;
-    &lt;!--无标题--&gt;
-    &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/transparent&lt;/item&gt;
-    &lt;!--背景透明--&gt;
-    &lt;item name=&quot;android:backgroundDimEnabled&quot;&gt;true&lt;/item&gt;
-    &lt;!--模糊--&gt;
-&lt;/style&gt;
-</code></pre><p>反正这个 style 里面可以搞很多事情，而且，什么圆角 dialog ，只要在 style 里面让背景透明，然后给个圆角 shape ，就可以嘿嘿了。</p>
-<p>给 dialog 设置 style 也很简单：</p>
-<pre><code>在 new 的时候：         
-Dialog    mDialog=new Dialog(context,R.style.dialog);
+        <p>####导出 csv 文件<br>    命令：<br>        sqlite3 xxx.db         //对数据sqlite文件进行读取<br>        .header on             // 表示导出表头，可选<br>        .mode csv                // 指定启用 csv 模式<br>        .once output.csv        // 指定输出 csv 文件的位置<br>        select * from tableName        // 导出数据由 sql 查询结果决定</p>
 
-ps:本来以为会有一个方法，提供设置 style ，结果没有。。。
-</code></pre><h2 id="Dialog-展示位置"><a href="#Dialog-展示位置" class="headerlink" title="Dialog 展示位置"></a>Dialog 展示位置</h2><p>嗯，Dialog 一般默认是剧中展示的，当然也可以设置底部或者顶部什么的，dialog 的位置，是通过设置 dialog 当前依附的 window 参数：</p>
-<pre><code>Window window = loadingDialog.getWindow();
-WindowManager.LayoutParams lp = window.getAttributes();
-//下面这两个参数，设置 window 高宽，默认不用管，改了会影响位置设置
-lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-window.setGravity(Gravity.CENTER);//这里设置 dialog 位置
-window.setAttributes(lp);
-</code></pre><p>##简单的一个 LoadingDialog<br>    /**</p>
-<pre><code> * Created by zhouqiang on 2017/9/20.
- */
-public class ProgessDialogView  {
-    private static Dialog loadingDialog;
-    public  static void showDialog(Activity context,String msg) {
-        //初始化 Dialog
-        LayoutInflater inflater = LayoutInflater.from(context);
-        FrameLayout view = ((FrameLayout) inflater.inflate(R.layout.dialog_loading_layout, null));
-        LinearLayout loadingLayout = (LinearLayout) view.findViewById(R.id.loading_layout);
-        TextView loadingMsg = (TextView) view.findViewById(R.id.loading_msg);
-        loadingMsg.setText(msg);
-        loadingDialog = new Dialog(context, R.style.MyLoadingStyle);
-        loadingDialog.setCancelable(true);
-      loadingDialog.setCanceledOnTouchOutside(false);
-        loadingDialog.setContentView(view, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-
-        Window window = loadingDialog.getWindow();
-        WindowManager.LayoutParams lp = window.getAttributes();
-//        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
-//        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        window.setGravity(Gravity.CENTER);
-        window.setAttributes(lp);
-//        window.setWindowAnimations(R.style.PopWindowAnimStyle);
-//        //
-        loadingDialog.show();
-//        return loadingDialog;
-    }
-
-    public static void closeDialog() {
-        if (loadingDialog != null &amp;&amp; loadingDialog.isShowing()) {
-           loadingDialog.dismiss();
-            loadingDialog=null;
-        }
-    }
-
-
-}
-</code></pre>
       
 
       
@@ -333,7 +266,7 @@ public class ProgessDialogView  {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/10/10/Dialog笔记/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/12/sqlite-操作相关/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -347,15 +280,20 @@ public class ProgessDialogView  {
   
 <nav id="article-nav">
   
-    <a href="/2018/04/09/CH1-Activity生命周期和启动模式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/04/18/微信小程序笔记/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CH1-Activity生命周期和启动模式.md
+          微信小程序笔记
         
       </div>
     </a>
   
+  
+    <a href="/2018/04/09/iview-使用笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iview 使用笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
