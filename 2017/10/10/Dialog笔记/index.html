@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="SoySauce1024">
 <meta property="og:description" content="记录一发 Dialog 一些东西...有时候会被一个圆角的 dialog 搞的很懵逼，网上搜了一下，不想自定义。 然后每次都是找到了方法，后面再次遇到这个需求又忘了，好的，这次记下来，就不会忘了！">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2017/10/public/img/circle_dialog.jpg">
-<meta property="og:updated_time" content="2018-07-09T17:02:00.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/10/public/assets/blogImg/circle_dialog.jpg">
+<meta property="og:updated_time" content="2018-07-09T17:08:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dialog">
 <meta name="twitter:description" content="记录一发 Dialog 一些东西...有时候会被一个圆角的 dialog 搞的很懵逼，网上搜了一下，不想自定义。 然后每次都是找到了方法，后面再次遇到这个需求又忘了，好的，这次记下来，就不会忘了！">
-<meta name="twitter:image" content="http://yoursite.com/2017/10/public/img/circle_dialog.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2017/10/public/assets/blogImg/circle_dialog.jpg">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -180,8 +180,7 @@
         <pre><code>记录一发 Dialog 一些东西...有时候会被一个圆角的 dialog 搞的很懵逼，网上搜了一下，不想自定义。
 然后每次都是找到了方法，后面再次遇到这个需求又忘了，好的，这次记下来，就不会忘了！
 </code></pre><a id="more"></a>
-<p>####什么都不说，先来一个 圆角 Dialog 的代码</p>
-<p>java 代码</p>
+<h4 id="什么都不说，先来一个-圆角-Dialog-的代码"><a href="#什么都不说，先来一个-圆角-Dialog-的代码" class="headerlink" title="什么都不说，先来一个 圆角 Dialog 的代码"></a>什么都不说，先来一个 圆角 Dialog 的代码</h4><p>java 代码</p>
 <pre><code>private void initRuleDialog() {
     View limitedRuleDialogView = LayoutInflater.from(this)
             .inflate(R.layout.dialog_limited_sale_layout, null);
@@ -196,7 +195,7 @@
     mRuleDialog.setCanceledOnTouchOutside(true);
 }
 </code></pre><p>   style </p>
-<pre><code>   &lt;style name=&quot;base_check_dialog&quot; parent=&quot;@android:style/Theme.Dialog&quot;&gt;
+<pre><code>&lt;style name=&quot;base_check_dialog&quot; parent=&quot;@android:style/Theme.Dialog&quot;&gt;
     &lt;item name=&quot;android:windowFrame&quot;&gt;@null&lt;/item&gt;
     &lt;item name=&quot;android:windowIsFloating&quot;&gt;true&lt;/item&gt;
     &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;
@@ -241,7 +240,7 @@
 &lt;solid android:color=&quot;@color/white&quot;&gt;&lt;/solid&gt;
 &lt;corners android:radius=&quot;20dp&quot;&gt;&lt;/corners&gt;
 </code></pre><p></p>
-<p> 效果图:<br> <img src="../../public/img/circle_dialog.jpg" alt="dialog"></p>
+<p> 效果图:<br> <img src="../../public/assets/blogImg/circle_dialog.jpg" alt="dialog"></p>
 <h3 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h3><p>很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。</p>
 <pre><code>&lt;style name=&quot;dialog&quot; parent=&quot;@android:style/Theme.Dialog&quot;&gt;
     &lt;item name=&quot;android:windowFrame&quot;&gt;@null&lt;/item&gt;
