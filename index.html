@@ -176,30 +176,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <pre><code>简单记录一些「微信小程序」常用但是记不住的功能点
-</code></pre><h3 id="文本只能一行超出时显示省略号"><a href="#文本只能一行超出时显示省略号" class="headerlink" title="文本只能一行超出时显示省略号"></a>文本只能一行超出时显示省略号</h3><pre><code>css 样式如下:
-    text {
-            font-size: 28rpx;
-            width: 180rpx;    //宽度最好加上
-            color: #7f7f7f;
-            margin-top: 20rpx;
-            overflow: hidden ;//超出一行自动隐藏
-            text-overflow: ellipsis;//文字隐藏后添加省略号
-            white-space: nowrap ;//强制不换行
-        }
-</code></pre><h3 id="文本限制行数，超出行数显示省略号"><a href="#文本限制行数，超出行数显示省略号" class="headerlink" title="文本限制行数，超出行数显示省略号"></a>文本限制行数，超出行数显示省略号</h3><pre><code>css 样式如下：
-    .itemDesc {
-        word-break: break-all;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; /*限制在一个块元素显示的文本的行数*/
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-</code></pre><h3 id="页面默认-100-撑满高度"><a href="#页面默认-100-撑满高度" class="headerlink" title="页面默认 100% 撑满高度"></a>页面默认 100% 撑满高度</h3><pre><code>在 对应 page 的 wxss 中,或则全局的 wxss 即 app.wxss :
-    page {
-        min-height: 100% ;
-    }
-</code></pre><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1524802130219&amp;di=98e5e9f06aae9737581513feb7b19ca9&amp;imgtype=0&amp;src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D53213dc0bcfd5266b3263457c371fd5e%2Fd1160924ab18972b06ed31e1eccd7b899f510ac1.jpg" alt="图片"></p>
-
+</code></pre>
+        
+          <a class="article-more-a" href="/2018/04/18/微信小程序笔记/#more">more >></a>
+        
       
 
       
@@ -501,70 +481,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>记录一发 Dialog 一些东西...
-</code></pre><p>####什么都不说，先来一个 圆角 Dialog 的代码</p>
-<p>java 代码</p>
-<pre><code>private void initRuleDialog() {
-    View limitedRuleDialogView = LayoutInflater.from(this)
-            .inflate(R.layout.dialog_limited_sale_layout, null);
-    mRuleDialog = new Dialog(this, R.style.base_check_dialog);//这里的 style 很重要 ，是保证 dialog 布局文件直接使用 shape 圆角时 不出现黑角 的条件，因为它设置了 背景透明，下面展示 style
-    mRuleDialog.setContentView(limitedRuleDialogView);
-    //这里设置的是宽高
-    Window window = mRuleDialog.getWindow();
-    WindowManager.LayoutParams layoutParams = mRuleDialog.getWindow().getAttributes();
-    layoutParams.width = BaseApplication.sreenWidth - 160;
-    layoutParams.height = BaseApplication.sreenWidth - 200;
-    window.setAttributes(layoutParams);
-    mRuleDialog.setCanceledOnTouchOutside(true);
-}
-</code></pre><p>   style </p>
-<pre><code>   &lt;style name=&quot;base_check_dialog&quot; parent=&quot;@android:style/Theme.Dialog&quot;&gt;
-    &lt;item name=&quot;android:windowFrame&quot;&gt;@null&lt;/item&gt;
-    &lt;item name=&quot;android:windowIsFloating&quot;&gt;true&lt;/item&gt;
-    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;
-    &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;
-    &lt;item name=&quot;android:background&quot;&gt;@android:color/transparent&lt;/item&gt;
-    &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/transparent&lt;/item&gt;
-    &lt;item name=&quot;android:backgroundDimEnabled&quot;&gt;true&lt;/item&gt;
-    &lt;item name=&quot;android:windowFullscreen&quot;&gt;false&lt;/item&gt;
-&lt;/style&gt;
-</code></pre><p>布局文件(布局文件只需要加上一个圆角shape)</p>
-<pre><code>&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:background=&quot;@drawable/circle_white_bg20&quot;
-    android:layout_height=&quot;match_parent&quot;&gt;
-
-    &lt;TextView
-    android:id=&quot;@+id/dialog_rule_title&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;45dp&quot;
-    android:background=&quot;@drawable/check_rule_bg&quot;
-    android:gravity=&quot;center&quot;
-    android:text=&quot;秒杀规则&quot;
-    android:textColor=&quot;@color/white&quot;
-    android:textSize=&quot;16sp&quot; /&gt;
-
-    &lt;ScrollView
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:layout_below=&quot;@+id/dialog_rule_title&quot;
-    android:scrollbars=&quot;none&quot;&gt;
-    &lt;TextView
-        android:id=&quot;@+id/dialog_rule_content&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:lineSpacingExtra=&quot;5dp&quot;
-        android:padding=&quot;15dp&quot;
-        android:text=&quot;@string/limit_sale_rule&quot; /&gt;
-    &lt;/ScrollView&gt;
-&lt;/RelativeLayout&gt;
-</code></pre><p> 上面没有什么特别的，就是跟布局 RelativeLayout 的背景是一个圆角 shape，看一下</p>
-<pre><code> &lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-&lt;solid android:color=&quot;@color/white&quot;&gt;&lt;/solid&gt;
-&lt;corners android:radius=&quot;20dp&quot;&gt;&lt;/corners&gt;
-</code></pre><p></p>
-<p> 效果图:<br> <img src="../img/circle_dialog.jpg" alt="dialog"></p>
-<h3 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h3><p>很多东西，比如背景透明、有无标题，可以直接在在 style 里面设置，虽然我也很想在代码里面一顿操作，但是 style 里面还是比较合适的。<br>
+        <pre><code>记录一发 Dialog 一些东西...有时候会被一个圆角的 dialog 搞的很懵逼，网上搜了一下，不想自定义。
+然后每次都是找到了方法，后面再次遇到这个需求又忘了，好的，这次记下来，就不会忘了！
+</code></pre>
         
           <a class="article-more-a" href="/2017/10/10/Dialog笔记/#more">more >></a>
         
