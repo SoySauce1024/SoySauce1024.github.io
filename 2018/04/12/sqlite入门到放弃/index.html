@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>sqlite入门到放弃 | SoySauce1024</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####导出 csv 文件    命令：        sqlite3 xxx.db         //对数据sqlite文件进行读取        .header on             // 表示导出表头，可选        .mode csv                // 指定启用 csv 模式        .once output.csv        // 指定输出 cs">
+  <meta name="description" content="记录一发 sqlite 的一些记不住的操作">
 <meta name="keywords" content="android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqlite入门到放弃">
 <meta property="og:url" content="http://yoursite.com/2018/04/12/sqlite入门到放弃/index.html">
 <meta property="og:site_name" content="SoySauce1024">
-<meta property="og:description" content="####导出 csv 文件    命令：        sqlite3 xxx.db         //对数据sqlite文件进行读取        .header on             // 表示导出表头，可选        .mode csv                // 指定启用 csv 模式        .once output.csv        // 指定输出 cs">
+<meta property="og:description" content="记录一发 sqlite 的一些记不住的操作">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-23T03:33:15.000Z">
+<meta property="og:updated_time" content="2018-07-23T03:36:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqlite入门到放弃">
-<meta name="twitter:description" content="####导出 csv 文件    命令：        sqlite3 xxx.db         //对数据sqlite文件进行读取        .header on             // 表示导出表头，可选        .mode csv                // 指定启用 csv 模式        .once output.csv        // 指定输出 cs">
+<meta name="twitter:description" content="记录一发 sqlite 的一些记不住的操作">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -175,8 +175,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####导出 csv 文件<br>    命令：<br>        sqlite3 xxx.db         //对数据sqlite文件进行读取<br>        .header on             // 表示导出表头，可选<br>        .mode csv                // 指定启用 csv 模式<br>        .once output.csv        // 指定输出 csv 文件的位置<br>        select * from tableName        // 导出数据由 sql 查询结果决定</p>
-
+        <pre><code>记录一发 sqlite 的一些记不住的操作
+</code></pre><a id="more"></a>
+<h4 id="导出-csv-文件"><a href="#导出-csv-文件" class="headerlink" title="导出 csv 文件"></a>导出 csv 文件</h4><pre><code>命令：
+    sqlite3 xxx.db         //对数据sqlite文件进行读取
+    .header on             // 表示导出表头，可选
+    .mode csv                // 指定启用 csv 模式
+    .once output.csv        // 指定输出 csv 文件的位置
+    select * from tableName        // 导出数据由 sql 查询结果决定
+</code></pre>
       
 
       
