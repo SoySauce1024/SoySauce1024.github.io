@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CH1-Activity生命周期和启动模式.md | SoySauce1024</title>
+  <title>微信小程序笔记 | SoySauce1024</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
-<meta name="keywords" content="android">
+  <meta name="description" content="简单记录一些「微信小程序」常用但是记不住的功能点">
+<meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CH1-Activity生命周期和启动模式.md">
-<meta property="og:url" content="http://yoursite.com/2018/04/09/CH1-Activity生命周期和启动模式/index.html">
+<meta property="og:title" content="微信小程序笔记">
+<meta property="og:url" content="http://yoursite.com/2018/04/18/微信小程序入门到放弃/index.html">
 <meta property="og:site_name" content="SoySauce1024">
-<meta property="og:description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
+<meta property="og:description" content="简单记录一些「微信小程序」常用但是记不住的功能点">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-09T07:29:47.000Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524802130219&di=98e5e9f06aae9737581513feb7b19ca9&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D53213dc0bcfd5266b3263457c371fd5e%2Fd1160924ab18972b06ed31e1eccd7b899f510ac1.jpg">
+<meta property="og:updated_time" content="2018-07-09T16:19:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CH1-Activity生命周期和启动模式.md">
-<meta name="twitter:description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
+<meta name="twitter:title" content="微信小程序笔记">
+<meta name="twitter:description" content="简单记录一些「微信小程序」常用但是记不住的功能点">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524802130219&di=98e5e9f06aae9737581513feb7b19ca9&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D53213dc0bcfd5266b3263457c371fd5e%2Fd1160924ab18972b06ed31e1eccd7b899f510ac1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -155,32 +157,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CH1-Activity生命周期和启动模式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-微信小程序入门到放弃" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CH1-Activity生命周期和启动模式.md
+      微信小程序笔记
     </h1>
   
 
         
-        <a href="/2018/04/09/CH1-Activity生命周期和启动模式/" class="archive-article-date">
-  	<time datetime="2018-04-09T07:19:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+        <a href="/2018/04/18/微信小程序入门到放弃/" class="archive-article-date">
+  	<time datetime="2018-04-18T09:01:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.
+        <pre><code>简单记录一些「微信小程序」常用但是记不住的功能点
 </code></pre><a id="more"></a>
-<h1 id="一、-Activity-生命周期"><a href="#一、-Activity-生命周期" class="headerlink" title="一、 Activity 生命周期"></a>一、 Activity 生命周期</h1><hr>
-<h2 id="1-何谓生命周期-？"><a href="#1-何谓生命周期-？" class="headerlink" title="1. 何谓生命周期 ？"></a>1. 何谓生命周期 ？</h2><h2 id="2-正常情况下生命周期"><a href="#2-正常情况下生命周期" class="headerlink" title="2. 正常情况下生命周期"></a>2. 正常情况下生命周期</h2><h2 id="3-异常情况下生命周期"><a href="#3-异常情况下生命周期" class="headerlink" title="3. 异常情况下生命周期"></a>3. 异常情况下生命周期</h2><hr>
-<h1 id="二、-Activity-启动模式"><a href="#二、-Activity-启动模式" class="headerlink" title="二、 Activity 启动模式"></a>二、 Activity 启动模式</h1><hr>
-<h2 id="1-四大启动模式"><a href="#1-四大启动模式" class="headerlink" title="1. 四大启动模式"></a>1. 四大启动模式</h2><h2 id="2-立个-Acitivty-的-Flags"><a href="#2-立个-Acitivty-的-Flags" class="headerlink" title="2. 立个 Acitivty 的 Flags"></a>2. 立个 Acitivty 的 Flags</h2><h3 id="a-何为-falgs-？"><a href="#a-何为-falgs-？" class="headerlink" title="a. 何为 falgs ？"></a>a. 何为 falgs ？</h3><h3 id="b-flag-有啥用-？"><a href="#b-flag-有啥用-？" class="headerlink" title="b. flag 有啥用 ？"></a>b. flag 有啥用 ？</h3><h3 id="c-有哪些-flag-？"><a href="#c-有哪些-flag-？" class="headerlink" title="c. 有哪些 flag ？"></a>c. 有哪些 flag ？</h3><h1 id="三、-IntentFilter-匹配机制"><a href="#三、-IntentFilter-匹配机制" class="headerlink" title="三、 IntentFilter 匹配机制"></a>三、 IntentFilter 匹配机制</h1>
+<h3 id="文本只能一行超出时显示省略号"><a href="#文本只能一行超出时显示省略号" class="headerlink" title="文本只能一行超出时显示省略号"></a>文本只能一行超出时显示省略号</h3><pre><code>css 样式如下:
+    text {
+            font-size: 28rpx;
+            width: 180rpx;    //宽度最好加上
+            color: #7f7f7f;
+            margin-top: 20rpx;
+            overflow: hidden ;//超出一行自动隐藏
+            text-overflow: ellipsis;//文字隐藏后添加省略号
+            white-space: nowrap ;//强制不换行
+        }
+</code></pre><h3 id="文本限制行数，超出行数显示省略号"><a href="#文本限制行数，超出行数显示省略号" class="headerlink" title="文本限制行数，超出行数显示省略号"></a>文本限制行数，超出行数显示省略号</h3><pre><code>css 样式如下：
+    .itemDesc {
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /*限制在一个块元素显示的文本的行数*/
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</code></pre><h3 id="页面默认-100-撑满高度"><a href="#页面默认-100-撑满高度" class="headerlink" title="页面默认 100% 撑满高度"></a>页面默认 100% 撑满高度</h3><pre><code>在 对应 page 的 wxss 中,或则全局的 wxss 即 app.wxss :
+    page {
+        min-height: 100% ;
+    }
+</code></pre><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1524802130219&amp;di=98e5e9f06aae9737581513feb7b19ca9&amp;imgtype=0&amp;src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D53213dc0bcfd5266b3263457c371fd5e%2Fd1160924ab18972b06ed31e1eccd7b899f510ac1.jpg" alt="图片"></p>
+
       
 
       
@@ -214,7 +236,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
         		</li>
       		
 		</ul>
@@ -270,7 +292,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/09/CH1-Activity生命周期和启动模式/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/18/微信小程序入门到放弃/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +306,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/09/iView入门到放弃/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/23/ECharts入门到放弃/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          iview 使用笔记
+          ECharts 入门到放弃
         
       </div>
     </a>
   
   
-    <a href="/2017/10/10/Dialog笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Dialog</div>
+    <a href="/2018/04/12/sqlite入门到放弃/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sqlite 操作相关</div>
       <i class="icon-circle-right"></i>
     </a>
   

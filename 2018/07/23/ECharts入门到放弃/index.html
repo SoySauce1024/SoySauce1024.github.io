@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CH1-Activity生命周期和启动模式.md | SoySauce1024</title>
+  <title>ECharts 入门到放弃 | SoySauce1024</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
-<meta name="keywords" content="android">
+  <meta name="description" content="ECharts 百度出的贼强大的一个前端图表库，通过一些参数配置，就可以搞出一个很炫酷的图表，跟着官方文档基本可以满足 完成 ###百度地图热力图    1.引入bmap，在 main.js 里面引入        import ‘echarts/extension/bmap/bmap’;    2.在 demo 页面 mouted() 方法里面 复制出一段官方例子的代码即可      比如这一个">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CH1-Activity生命周期和启动模式.md">
-<meta property="og:url" content="http://yoursite.com/2018/04/09/CH1-Activity生命周期和启动模式/index.html">
+<meta property="og:title" content="ECharts 入门到放弃">
+<meta property="og:url" content="http://yoursite.com/2018/07/23/ECharts入门到放弃/index.html">
 <meta property="og:site_name" content="SoySauce1024">
-<meta property="og:description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
+<meta property="og:description" content="ECharts 百度出的贼强大的一个前端图表库，通过一些参数配置，就可以搞出一个很炫酷的图表，跟着官方文档基本可以满足 完成 ###百度地图热力图    1.引入bmap，在 main.js 里面引入        import ‘echarts/extension/bmap/bmap’;    2.在 demo 页面 mouted() 方法里面 复制出一段官方例子的代码即可      比如这一个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-09T07:29:47.000Z">
+<meta property="og:updated_time" content="2018-07-23T03:28:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CH1-Activity生命周期和启动模式.md">
-<meta name="twitter:description" content="《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.">
+<meta name="twitter:title" content="ECharts 入门到放弃">
+<meta name="twitter:description" content="ECharts 百度出的贼强大的一个前端图表库，通过一些参数配置，就可以搞出一个很炫酷的图表，跟着官方文档基本可以满足 完成 ###百度地图热力图    1.引入bmap，在 main.js 里面引入        import ‘echarts/extension/bmap/bmap’;    2.在 demo 页面 mouted() 方法里面 复制出一段官方例子的代码即可      比如这一个">
   
     <link rel="alternative" href="/atom.xml" title="SoySauce1024" type="application/atom+xml">
   
@@ -155,32 +155,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CH1-Activity生命周期和启动模式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ECharts入门到放弃" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CH1-Activity生命周期和启动模式.md
+      ECharts 入门到放弃
     </h1>
   
 
         
-        <a href="/2018/04/09/CH1-Activity生命周期和启动模式/" class="archive-article-date">
-  	<time datetime="2018-04-09T07:19:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+        <a href="/2018/07/23/ECharts入门到放弃/" class="archive-article-date">
+  	<time datetime="2018-07-23T03:06:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>《Android 艺术探索》 第一章「Activity 的生命周期和启动模式」阅读笔记.
-</code></pre><a id="more"></a>
-<h1 id="一、-Activity-生命周期"><a href="#一、-Activity-生命周期" class="headerlink" title="一、 Activity 生命周期"></a>一、 Activity 生命周期</h1><hr>
-<h2 id="1-何谓生命周期-？"><a href="#1-何谓生命周期-？" class="headerlink" title="1. 何谓生命周期 ？"></a>1. 何谓生命周期 ？</h2><h2 id="2-正常情况下生命周期"><a href="#2-正常情况下生命周期" class="headerlink" title="2. 正常情况下生命周期"></a>2. 正常情况下生命周期</h2><h2 id="3-异常情况下生命周期"><a href="#3-异常情况下生命周期" class="headerlink" title="3. 异常情况下生命周期"></a>3. 异常情况下生命周期</h2><hr>
-<h1 id="二、-Activity-启动模式"><a href="#二、-Activity-启动模式" class="headerlink" title="二、 Activity 启动模式"></a>二、 Activity 启动模式</h1><hr>
-<h2 id="1-四大启动模式"><a href="#1-四大启动模式" class="headerlink" title="1. 四大启动模式"></a>1. 四大启动模式</h2><h2 id="2-立个-Acitivty-的-Flags"><a href="#2-立个-Acitivty-的-Flags" class="headerlink" title="2. 立个 Acitivty 的 Flags"></a>2. 立个 Acitivty 的 Flags</h2><h3 id="a-何为-falgs-？"><a href="#a-何为-falgs-？" class="headerlink" title="a. 何为 falgs ？"></a>a. 何为 falgs ？</h3><h3 id="b-flag-有啥用-？"><a href="#b-flag-有啥用-？" class="headerlink" title="b. flag 有啥用 ？"></a>b. flag 有啥用 ？</h3><h3 id="c-有哪些-flag-？"><a href="#c-有哪些-flag-？" class="headerlink" title="c. 有哪些 flag ？"></a>c. 有哪些 flag ？</h3><h1 id="三、-IntentFilter-匹配机制"><a href="#三、-IntentFilter-匹配机制" class="headerlink" title="三、 IntentFilter 匹配机制"></a>三、 IntentFilter 匹配机制</h1>
+        <p>ECharts 百度出的贼强大的一个前端图表库，通过一些参数配置，就可以搞出一个很炫酷的图表，跟着官方文档基本可以满足 完成</p>
+<p>###百度地图热力图<br>    1.引入bmap，在 main.js 里面引入<br>        import ‘echarts/extension/bmap/bmap’;<br>    2.在 demo 页面 mouted() 方法里面 复制出一段官方例子的代码即可<br>      比如这一个例子页面的代码：<br>      [官方例子](“<a href="http://gallery.echartsjs.com/editor.html?c=xHkdvDsz4Q&quot;）" target="_blank" rel="noopener">http://gallery.echartsjs.com/editor.html?c=xHkdvDsz4Q&quot;）</a><br>    3.然后 怎么用就自己看着别人的搞吧，反正我没有找到相关文档，不过这些配置项应该还是能在官方 api 里面找到的。</p>
+
       
 
       
@@ -214,7 +211,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -270,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/09/CH1-Activity生命周期和启动模式/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/23/ECharts入门到放弃/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +281,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/09/iView入门到放弃/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          iview 使用笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/10/Dialog笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Dialog</div>
+    <a href="/2018/04/18/微信小程序入门到放弃/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
